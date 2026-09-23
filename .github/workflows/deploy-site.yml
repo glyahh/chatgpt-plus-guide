@@ -1,11 +1,9 @@
-# GitHub Pages 部署（push 到 main 自动部署 site/）
-# 前置: 仓库 Settings > Pages > Source 选 "GitHub Actions"
+# GitHub Pages 部署（push 到 main 自动部署仓库根目录）
 name: Deploy Site
 
 on:
   push:
     branches: [main]
-    paths: ["site/**"]
   workflow_dispatch:
 
 permissions:
@@ -28,6 +26,6 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: .
       - id: deployment
         uses: actions/deploy-pages@v4
