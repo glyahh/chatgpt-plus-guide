@@ -7,7 +7,7 @@
 
 官方原价 Plus ¥168/月，用优惠码后 **¥136/月**（省 ¥32）；Pro5x 原价 ¥750，用码 **¥682**（省 ¥67）。
 
-- 直充链接：https://prodclub.xyz/join
+- 直充链接：https://prodclub.xyz
 - 优惠码：`32S8DT`
 - **注意：下单时填优惠码，不填按原价扣**
 
@@ -24,7 +24,7 @@
 
 ## 开通步骤（约 10 分钟）
 
-1. 打开 https://prodclub.xyz/join
+1. 打开 https://prodclub.xyz
 2. 注册/登录平台账号
 3. 选择套餐：Plus 或 Pro5x
 4. 下单时填优惠码 `32S8DT`（不填原价购买）
@@ -63,4 +63,4 @@
 
 ---
 
-*链接：https://prodclub.xyz/join ｜ 优惠码：32S8DT ｜ Plus ¥136 / Pro5x ¥682（原价 ¥168/¥750）*
+*链接：https://prodclub.xyz ｜ 优惠码：32S8DT ｜ Plus ¥136 / Pro5x ¥682（原价 ¥168/¥750）*
