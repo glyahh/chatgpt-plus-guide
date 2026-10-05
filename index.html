@@ -32,7 +32,17 @@ li{margin-bottom:8px}
 .btn{display:inline-block;background:var(--accent);color:#0d1117;font-weight:700;padding:12px 28px;border-radius:10px;text-decoration:none;margin:8px 0}
 .faq h3{font-size:15px;margin:14px 0 4px}
 .faq p{color:var(--muted);font-size:14px}
+/* 同站小工具销售卡：沿用深色变量，不另起视觉 */
+.tools-lead{color:var(--muted);font-size:14px;margin-bottom:14px}
+.tool-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.tool-list li{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.tool-list a{color:var(--accent);font-weight:700;text-decoration:none}
+.tool-list .meta{color:var(--price);font-weight:700;margin-left:8px;font-size:14px}
+.tool-list p{color:var(--muted);font-size:13px;margin-top:4px}
+.pay-note{color:var(--muted);font-size:13px;margin-top:12px}
+.pay-note a,.tools-lead a{color:var(--accent)}
 footer{color:var(--muted);font-size:13px;text-align:center;margin-top:32px}
+footer a{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -61,6 +71,40 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:32px}
     <span class="warn">⚠ 不填优惠码按原价扣</span>
   </div>
   <a class="btn" href="https://prodclub.xyz">去开通 →</a>
+</div>
+
+<!-- 付费小工具入口：放在直充价格卡之后，教程正文、优惠码和 prodclub 链接保持原样 -->
+<div class="card" id="tools">
+  <h2>同站小工具 / 资料包</h2>
+  <p class="tools-lead">微信扫码按标价付款，备注写「关键词 + 邮箱」，约 12 小时内发到邮箱。催发货写邮件到 <a href="mailto:gyb1017123121@163.com">gyb1017123121@163.com</a>。也可以先看 <a href="https://lenyue-tools.surge.sh/">店铺总览</a>，或打开 <a href="/tools-hub/">站内导航</a>。</p>
+  <ul class="tool-list">
+    <li>
+      <a href="https://lenyue-tools.surge.sh/">店铺总览</a>
+      <p>五个在售页面放在一起，先看再选。</p>
+    </li>
+    <li>
+      <a href="https://gongshi-banyungong.surge.sh/">公式搬运工</a><span class="meta">¥19.9</span>
+      <p>AI 回答转成可编辑 Word 公式。免费每天 3 次，买断后发激活码。备注写：公式 + 邮箱。</p>
+    </li>
+    <li>
+      <a href="https://banzhuren-jimingbao.surge.sh/">班主任期末救命包</a><span class="meta">¥9.9</span>
+      <p>期末评语、家长会话术和可改写通知。备注写：班主任 + 邮箱。</p>
+    </li>
+    <li>
+      <a href="https://kaoyan-zuozhanbao.surge.sh/">考研倒计时作战包</a><span class="meta">¥9.9</span>
+      <p>倒计时计划、周复盘和考前清单。和班主任同价，备注写：考研 + 邮箱。</p>
+    </li>
+    <li>
+      <a href="https://jianli-jiujibao.surge.sh/">求职简历急救包</a><span class="meta">¥12.9</span>
+      <p>简历骨架、项目描述和面试提纲。备注写：简历 + 邮箱。</p>
+    </li>
+    <li>
+      <a href="https://flatnest.surge.sh/">FlatNest</a><span class="meta">EN</span>
+      <p>英文站：嵌套 JSON 压平 / 还原。免费可直接用，Pro $9 在站内发邮件意向。</p>
+    </li>
+  </ul>
+  <a class="btn" href="/tools-hub/">打开站内工具导航 →</a>
+  <p class="pay-note">收款码没有固定金额，请按各商品标价自己填写。直充 ChatGPT Plus 仍走上方优惠码，和这些资料包不是同一笔付款。</p>
 </div>
 
 <div class="card">
@@ -98,7 +142,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:32px}
   <p>境外卡路径拒率高，直充直接绕过支付环节。</p>
 </div>
 
-<footer>有问题提 <a href="https://github.com/glyahh/chatgpt-plus-guide/issues" style="color:var(--accent)">GitHub Issue</a> ｜ 或发邮件至 <a href="mailto:3356506398@qq.com" style="color:var(--accent)">3356506398@qq.com</a> ｜ 本教程持续更新</footer>
+<footer>有问题提 <a href="https://github.com/glyahh/chatgpt-plus-guide/issues">GitHub Issue</a> ｜ 或发邮件至 <a href="mailto:3356506398@qq.com">3356506398@qq.com</a> ｜ <a href="/tools-hub/">同站小工具</a> ｜ 本教程持续更新</footer>
 
 </div>
 </body>
