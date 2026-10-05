@@ -1,13 +1,16 @@
 # tools-hub
 
-静态导航页，链接到五个已上线的 Surge 站点。本目录是**新增路径**，不修改仓库根目录的 ChatGPT Plus 直充教程（`index.html`、`README.md`、`CNAME`）。
+静态导航页，链接到店铺总览和五个已上线的 Surge 站点，并写明微信付款备注。首页 `index.html` 有一块「同站小工具 / 资料包」入口指向本页；直充教程正文、优惠码和 prodclub 链接不在这里改。
 
 ## 页面里有什么
 
 `index.html` 为每个工具写了中文简介、英文简介和价格（摘自 2026-10-05 各站页面）：
 
+中文资料包：微信扫码，金额按标价自填，备注写「关键词 + 邮箱」，约 12 小时内发货。催发货 / 售后：gyb1017123121@163.com。班主任和考研都是 ¥9.9，关键词分别写「班主任」「考研」。FlatNest 的 Pro 走英文站邮件意向，不走微信备注。
+
 | 工具 | 链接 | 价格 |
 |---|---|---|
+| 店铺总览 | https://lenyue-tools.surge.sh/ | 五个商品的付款入口 |
 | 公式搬运工 | https://gongshi-banyungong.surge.sh | 免费 ¥0（每天 3 次）；Pro 永久早鸟 ¥19.9，之后 ¥29.9 |
 | 班主任期末救命包 | https://banzhuren-jimingbao.surge.sh | 早鸟 ¥9.9，之后 ¥19.9 |
 | FlatNest | https://flatnest.surge.sh | 免费（约 8 万字符内）；Pro 早鸟一次性 $9 |
