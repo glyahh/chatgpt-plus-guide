@@ -11,7 +11,7 @@
 | 工具 | 链接 | 价格 |
 |---|---|---|
 | 店铺总览 | https://lenyue-tools.surge.sh/ | 五个商品的付款入口 |
-| 公式搬运工 | https://gongshi-banyungong.surge.sh | 免费 ¥0（每天 3 次）；Pro 永久早鸟 ¥19.9，之后 ¥29.9 |
+| 公式搬运工 | https://gongshi-lenyue.surge.sh/ | 免费 ¥0（每天 3 次）；Pro 永久早鸟 ¥19.9，之后 ¥29.9 |
 | 班主任期末救命包 | https://banzhuren-jimingbao.surge.sh | 早鸟 ¥9.9，之后 ¥19.9 |
 | FlatNest | https://flatnest.surge.sh | 免费（约 8 万字符内）；Pro 早鸟一次性 $9 |
 | 考研倒计时作战包 | https://kaoyan-zuozhanbao.surge.sh | 早鸟 ¥9.9，之后 ¥16.9 |
