@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="冷月工具小铺朋友圈/群文案一键复制。公式搬运工、班主任包、考研包、简历包合集。" />
+  <link rel="canonical" href="https://glyahh.top/share/" />
+  <meta name="robots" content="index,follow" />
+  <title>朋友圈/群文案 · 一键复制</title>
+  <style>
+    :root { --bg:#0f1419; --card:#1a2332; --fg:#e7ecf3; --muted:#9aa8bc; --acc:#3d8bfd; --ok:#3dd68c; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "PingFang SC", "Noto Sans SC", sans-serif; background:var(--bg); color:var(--fg); line-height:1.55; }
+    header { padding:1.25rem 1rem 0.5rem; max-width:720px; margin:0 auto; }
+    header h1 { font-size:1.25rem; margin:0 0 0.35rem; }
+    header p { margin:0; color:var(--muted); font-size:0.9rem; }
+    header a { color:var(--acc); }
+    main { max-width:720px; margin:0 auto; padding:0.75rem 1rem 2.5rem; display:flex; flex-direction:column; gap:0.85rem; }
+    .card { background:var(--card); border-radius:12px; padding:1rem 1rem 0.85rem; border:1px solid #2a3548; }
+    .card h2 { font-size:0.95rem; margin:0 0 0.5rem; display:flex; align-items:center; justify-content:space-between; gap:0.5rem; }
+    .tag { font-size:0.7rem; font-weight:600; padding:0.15rem 0.45rem; border-radius:999px; background:#243049; color:var(--muted); }
+    pre { white-space:pre-wrap; word-break:break-word; background:#121820; padding:0.75rem; border-radius:8px; font-size:0.88rem; margin:0 0 0.65rem; color:#d5dde8; }
+    button { appearance:none; border:0; background:var(--acc); color:#fff; font-weight:600; font-size:0.85rem; padding:0.45rem 0.85rem; border-radius:8px; cursor:pointer; }
+    button.copied { background:var(--ok); color:#062416; }
+    footer { max-width:720px; margin:0 auto; padding:0 1rem 2rem; color:var(--muted); font-size:0.8rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>发圈文案 · 点一下复制</h1>
+    <p>店铺合集：<a href="https://glyahh.top/tools/" target="_blank" rel="noopener">glyahh.top/tools</a> · 售后 gyb1017123121@163.com</p>
+  </header>
+  <main id="list"></main>
+  <footer>仅供本人转发。付款备注：公式/班主任/考研/简历 + 邮箱。金额：19.9 / 9.9 / 9.9 / 12.9。</footer>
+  <script>
+    const items = [
+      { tag: "合集", title: "五合一店铺", text: `做了几个能直接用的小工具/资料包（原创可改写）：\n① 公式搬运工：AI回答转Word，公式可编辑 ¥19.9\n② 班主任期末救命包 ¥9.9\n③ 考研倒计时作战包 ¥9.9\n④ 求职简历急救包 ¥12.9\n合集页：https://glyahh.top/tools/\n微信扫码，备注「关键词+邮箱」发货。` },
+      { tag: "公式", title: "公式痛点短句", text: `AI公式复制进Word全是乱码？\n「公式搬运工」一键导出可编辑公式（Word/WPS），本地处理不上传。\n免费可试用，永久早鸟 ¥19.9。\nhttps://glyahh.top/gongshi/\n付款备注邮箱收激活码。` },
+      { tag: "公式", title: "论文党", text: `写论文最烦手敲公式。\n用公式搬运工：框选AI回答 → 导出docx → 双击就能改公式。\n¥19.9买断：https://glyahh.top/gongshi/` },
+      { tag: "班主任", title: "评语救命", text: `小学老师期末评语写到手软？\n「班主任期末救命包」：评语80例+家长话术+微信模板+表格，Word可改。\n早鸟 ¥9.9，备注「班主任」+邮箱发货。\nhttps://glyahh.top/banzhuren/` },
+      { tag: "考研", title: "作战表", text: `考研计划写了又废？把作战表打印贴墙上。\n倒计时+周表+四科清单+考前30天（原创，不含盗版真题）。\n¥9.9，备注「考研」+邮箱。\nhttps://glyahh.top/kaoyan/` },
+      { tag: "简历", title: "简历骨架", text: `简历没数字、面试讲不利索？\n「求职简历急救包」：一页骨架+STAR故事库+面试48h清单。\n原创可改，非代写。¥12.9，备注「简历」+邮箱。\nhttps://glyahh.top/jianli/` },
+      { tag: "群", title: "弱销售一句", text: `有个合集页，论文公式/班主任评语/考研表/简历骨架都在：\nhttps://glyahh.top/tools/\n先试用或看目录，需要再扫码，备注邮箱发货。` },
+    ];
+    const list = document.getElementById("list");
+    items.forEach((it, i) => {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.innerHTML = `<h2><span>${it.title}</span><span class="tag">${it.tag}</span></h2><pre id="t${i}"></pre><button type="button" data-i="${i}">复制文案</button>`;
+      card.querySelector("pre").textContent = it.text;
+      list.appendChild(card);
+    });
+    list.addEventListener("click", async (e) => {
+      const btn = e.target.closest("button[data-i]");
+      if (!btn) return;
+      const text = items[+btn.dataset.i].text;
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = "已复制";
+        btn.classList.add("copied");
+        setTimeout(() => { btn.textContent = "复制文案"; btn.classList.remove("copied"); }, 1600);
+      } catch {
+        const pre = document.getElementById("t" + btn.dataset.i);
+        const range = document.createRange();
+        range.selectNodeContents(pre);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        btn.textContent = "请手动复制选中文字";
+      }
+    });
+  </script>
+</body>
+</html>

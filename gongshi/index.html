@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公式搬运工 - AI回答一键转Word，公式可编辑不乱码</title>
+<meta name="description" content="把AI对话里的回答（含LaTeX数学公式、表格、代码）一键导出为Word文档，公式变成Word/WPS原生可编辑公式，不再乱码。浏览器本地处理，不上传。">
+  <link rel="canonical" href="https://glyahh.top/gongshi/" />
+  <meta name="robots" content="index,follow" />
+<link rel="stylesheet" href="temml.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">公式搬运工 <span>AI 回答一键转 Word · 公式可编辑不乱码</span></div>
+  <nav><a href="#how">怎么用</a><a href="#pricing">价格</a><a href="#pay">购买</a><a href="#faq">常见问题</a></nav>
+</header>
+
+<main class="tool">
+  <section class="pane">
+    <div class="pane-h">① 粘贴 AI 回答 <small>直接框选网页复制，或点 AI 的「复制」按钮都行</small></div>
+    <textarea id="input" spellcheck="false" placeholder="在这里粘贴……"></textarea>
+    <div class="row"><button id="sample" class="ghost">载入示例</button><button id="clear" class="ghost">清空</button></div>
+  </section>
+  <section class="pane">
+    <div class="pane-h">② 预览</div>
+    <article id="preview" class="preview"></article>
+    <div class="row"><button id="download" class="primary">③ 下载 Word（.docx）</button></div>
+    <div id="status" class="status"></div>
+  </section>
+</main>
+
+<section id="how" class="block">
+  <h2>为什么需要它</h2>
+  <ul class="pain">
+    <li>把 AI 回答复制进 Word，公式变成 <code>\frac{a}{b}</code>、<code>$$</code> 一堆符号？</li>
+    <li>一个公式一个公式手敲进公式编辑器，写作业/论文/教案要花一晚上？</li>
+    <li>表格错位、代码挤成一团、列表编号全乱？</li>
+  </ul>
+  <p>公式搬运工把回答转换成 <b>Word / WPS 原生公式</b>（双击就能改），表格、标题、列表、代码一并保留。<b>全程在你浏览器里处理，不上传任何内容。</b></p>
+</section>
+
+<section id="pricing" class="block">
+  <h2>价格</h2>
+  <div class="plans">
+    <div class="plan">
+      <h3>免费版</h3><div class="price">¥0</div>
+      <ul><li>每天 3 次导出</li><li>公式 / 表格 / 代码完整转换</li><li>文末带一行小字署名</li></ul>
+    </div>
+    <div class="plan hot">
+      <div class="badge">早鸟价</div>
+      <h3>Pro 永久版</h3><div class="price">¥<span data-price></span> <s>¥<span data-price-later></span></s></div>
+      <ul><li>无限次导出，去掉署名</li><li>网页版 + 浏览器插件通用</li><li>一次付费，永久使用，后续更新免费</li><li>插件：一键导出当前回答 / 选中内容</li></ul>
+      <a class="primary btn" data-buy href="#pay">微信扫码购买 ¥<span data-price></span></a>
+    </div>
+  </div>
+  <div id="pay" class="pay">
+    <h3>购买 Pro：微信扫码付款 ¥<span data-price></span></h3>
+    <div class="pay-body">
+      <figure class="pay-qr"><img src="pay-wechat.png" alt="微信收款码" data-pay-wechat><figcaption>微信扫一扫付款</figcaption></figure>
+      <figure class="pay-qr" data-alipay hidden><img alt="支付宝收款码" data-pay-alipay><figcaption>支付宝</figcaption></figure>
+      <ol class="pay-steps">
+        <li>微信扫左侧二维码，<b>金额输入 ¥<span data-price></span></b>。<br><small>用手机看这页？长按二维码保存图片 → 微信「扫一扫」右上角选相册识别。</small></li>
+        <li><b>付款时「添加备注」填写你的邮箱</b>（例如 <code>name@qq.com</code>），激活码会发到这个邮箱。</li>
+        <li>收到付款后人工发码，一般 <span data-delivery></span> 小时内送达（注意查看垃圾箱）。</li>
+        <li>拿到 <code>GS1-</code> 开头的激活码，粘贴到下方「激活」即可，网页版和插件通用。</li>
+      </ol>
+    </div>
+    <p class="pay-note">忘了填备注 / 超时没收到码？把付款截图 + 你的邮箱发到 <a data-contact-mail></a>，会尽快补发。<span data-alipay-off>支付宝暂未开通，请使用微信支付。</span></p>
+  </div>
+  <div class="activate">
+    <b>已有激活码？</b>
+    <input id="code" placeholder="粘贴 GS1- 开头的激活码"><button id="activate" class="primary">激活</button>
+    <span id="actmsg"></span>
+  </div>
+</section>
+
+<section id="faq" class="block">
+  <h2>常见问题</h2>
+  <details><summary>支持哪些 AI？</summary><p>只要回答里的公式是 LaTeX（绝大多数国内外 AI 聊天产品都是），复制粘贴到这里就能转。直接框选网页复制时会自动从网页里还原公式源码。</p></details>
+  <details><summary>WPS 能用吗？</summary><p>可以。导出的是标准 .docx，公式为 Office 数学公式（OMML），Word 2010+ 和 WPS 都能直接显示和编辑。</p></details>
+  <details><summary>内容会上传吗？</summary><p>不会。转换完全在你的浏览器本地完成，可以断网使用。</p></details>
+  <details><summary>怎么付款？多久收到激活码？</summary><p>目前用微信扫码付款（¥<span data-price></span>），付款备注填邮箱，人工核对后把激活码发到该邮箱，一般 <span data-delivery></span> 小时内。没收到请联系 <span data-contact></span>。</p></details>
+  <details><summary>买了不好用能退吗？</summary><p>先用免费版试到满意再买。确有问题 7 天内联系 <span data-contact></span>，无法解决全额退款。</p></details>
+</section>
+
+<footer class="foot">公式搬运工 · 独立开发者作品 · 联系：<span data-contact></span> · <a href="privacy.html">隐私政策</a></footer>
+<div id="toast" class="toast"></div>
+<script src="dist/app.js"></script>
+</body>
+</html>

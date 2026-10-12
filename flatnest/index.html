@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flatten Nested JSON Online — Free JSON Flattener &amp; Unflattener | FlatNest</title>
+  <meta name="description" content="Free online tool to flatten nested JSON into dot-notation keys, or unflatten flat JSON back to nested objects. Runs locally in your browser — no upload, no signup." />
+  <meta name="keywords" content="flatten json online, nested json to flat, json unflatten, flatten json object, convert nested json, json flattener, unflatten json, dot notation json" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://glyahh.top/flatnest/" />
+  <meta property="og:title" content="FlatNest — Flatten &amp; Unflatten Nested JSON Online" />
+  <meta property="og:description" content="Paste nested JSON, get flat key paths (or reverse). 100% client-side. Free for everyday use." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://glyahh.top/flatnest/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "FlatNest",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Flatten nested JSON to dot-notation keys or unflatten flat JSON online. Client-side only.",
+    "url": "https://glyahh.top/flatnest/"
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">F</div>
+        <div>
+          <h1>FlatNest</h1>
+          <p>Flatten &amp; unflatten nested JSON</p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a class="active" href="index.html">Tool</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:gyb1017123121@163.com">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Flatten nested JSON online (or unflatten it back)</h2>
+      <p>
+        Turn deep objects into flat <code>dot.notation</code> keys for spreadsheets, configs, and APIs —
+        or rebuild nested JSON from a flat map. Everything runs in your browser; your data never leaves this device.
+      </p>
+      <div class="badges">
+        <span class="badge">No signup</span>
+        <span class="badge">No server upload</span>
+        <span class="badge">Dot or custom separator</span>
+        <span class="badge">Free under 80k chars</span>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <div class="field">
+        <label for="mode">Mode</label>
+        <select id="mode">
+          <option value="flatten">Flatten → flat keys</option>
+          <option value="unflatten">Unflatten → nested</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="separator">Separator</label>
+        <select id="separator">
+          <option value="." selected>Dot ( . )</option>
+          <option value="_">Underscore ( _ )</option>
+          <option value="/">Slash ( / )</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="arrays">Arrays (flatten)</label>
+        <select id="arrays">
+          <option value="index" selected>Expand indexes</option>
+          <option value="keep">Keep as array values</option>
+        </select>
+      </div>
+      <label class="check"><input type="checkbox" id="pretty" checked /> Pretty print</label>
+      <div class="actions">
+        <button type="button" id="btn-sample">Load sample</button>
+        <button type="button" id="btn-swap">Swap ⇄</button>
+        <button type="button" id="btn-clear">Clear</button>
+        <button type="button" class="primary" id="btn-run">Convert ⌘/Ctrl+Enter</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="panel-head">
+          <span>Input JSON</span>
+          <span id="char-count">0 chars</span>
+        </div>
+        <textarea id="input" spellcheck="false" placeholder='{"user":{"name":"Ada","prefs":{"theme":"dark"}}}'></textarea>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <span>Output</span>
+          <span>
+            <button type="button" id="btn-copy">Copy</button>
+            <button type="button" id="btn-download">Download .json</button>
+          </span>
+        </div>
+        <textarea id="output" spellcheck="false" readonly placeholder="Result appears here"></textarea>
+      </div>
+    </div>
+
+    <p id="status" class="status" role="status"></p>
+
+    <section class="seo" aria-label="About this tool">
+      <article>
+        <h3>What does “flatten nested JSON” mean?</h3>
+        <p>
+          Nested JSON stores values under objects inside objects (for example
+          <code>user.profile.email</code>). Flattening turns that tree into a single-level map of path keys,
+          which is easier to filter in spreadsheets, ship as env-style configs, or feed into ETL pipelines.
+          Unflatten does the reverse: rebuild a nested object from those path keys.
+        </p>
+      </article>
+      <article>
+        <h3>When to use FlatNest</h3>
+        <ul>
+          <li>Convert API payloads into flat rows for CSV / BI tools</li>
+          <li>Normalize config files that mix nested and flat styles</li>
+          <li>Debug deeply nested responses without scrolling a giant tree</li>
+          <li>Prepare test fixtures with predictable key paths</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Privacy</h3>
+        <p>
+          Conversion is 100% client-side JavaScript. We do not upload your JSON, store it, or require an account
+          for the free tier. See the <a href="privacy.html">privacy page</a>.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      <span>© 2026 FlatNest · Independent micro-tool · Not affiliated with any JSON brand or library vendor</span>
+      <span><a href="pricing.html">Pro pricing</a> · <a href="mailto:gyb1017123121@163.com">gyb1017123121@163.com</a></span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
